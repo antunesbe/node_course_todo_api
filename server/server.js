@@ -15,14 +15,16 @@ app.post('/todos', (req, res) => {
     });
 
     todo.save().then(doc => {
-            console.log('New Todo Saved')
-            res.status(201).send(doc);
-        }).catch(err => {
-            res.status(400).send(err);
-        });
+        console.log('New Todo Saved')
+        res.status(201).send(doc);
+    }).catch(err => {
+        res.status(400).send(err);
+    });
 })
 
 
 app.listen(3000, () => {
     console.log('Server listening at 3000');
 });
+
+module.exports = {app};
